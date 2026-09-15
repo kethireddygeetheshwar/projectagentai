@@ -1,32 +1,57 @@
 # Project Agent AI
 
-An experimental AI-assisted project workspace focused on turning a project idea into structured development work. The repository is intended to evolve into a practical agent workflow for planning, implementation, and validation rather than a collection of generated examples.
+An early-stage AI-assisted project workspace exploring how an agent can turn a software idea into a structured development plan.
 
 ## Current status
 
-This project is an active prototype. The repository is intentionally small while the architecture and core workflow are being developed.
+This repository is intentionally a small prototype. It is not presented as a production-ready autonomous coding agent.
 
-## Engineering goals
+## Goals
 
-- Convert project requirements into actionable tasks
-- Keep generated work reviewable and reproducible
-- Separate planning, implementation, and validation steps
-- Add automated tests as features become stable
-- Document architectural decisions and limitations
+- Turn a product idea into explicit requirements and tasks.
+- Break tasks into implementation steps and acceptance criteria.
+- Keep generated plans reviewable by a human developer.
+- Eventually connect planning with repository-aware development workflows.
 
-## Development roadmap
+## Planned architecture
 
-- [ ] Define the agent workflow and input/output contracts
-- [ ] Add a minimal end-to-end task execution flow
-- [ ] Add deterministic tests for core components
-- [ ] Add structured logging and error handling
-- [ ] Add CI checks for every pull request
-- [ ] Document threat considerations for AI-generated actions
+```text
+Idea
+  ↓
+Requirement extraction
+  ↓
+Task / acceptance-criteria generation
+  ↓
+Human review
+  ↓
+Implementation workflow
+  ↓
+Tests + validation
+```
 
-## Principles
+## Engineering principles
 
-The project prioritizes transparent, testable automation. AI output is treated as untrusted input and should be validated before it is used to perform application or repository changes.
+- Human approval before consequential changes.
+- Generated output is treated as untrusted input.
+- Secrets stay outside source control.
+- Tests should accompany executable functionality.
+- Small, observable steps are preferred over unrestricted autonomous changes.
+
+## Roadmap
+
+- [ ] Define a stable Python package structure
+- [ ] Add typed request/response models
+- [ ] Add deterministic planning tests
+- [ ] Add an LLM provider abstraction
+- [ ] Add prompt and output validation
+- [ ] Add repository context ingestion
+- [ ] Add a CLI for generating plans
+- [ ] Add CI for tests and linting
 
 ## Contributing
 
-Keep pull requests focused, explain the reasoning behind changes, and include tests or reproducible validation steps whenever possible.
+Keep changes focused, document behavior, and add tests for executable functionality. Do not commit API keys, access tokens, or private project data.
+
+## License
+
+License will be added when the project's first reusable implementation is published.
