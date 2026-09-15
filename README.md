@@ -13,20 +13,10 @@ This repository is intentionally a small prototype. It is not presented as a pro
 - Keep generated plans reviewable by a human developer.
 - Eventually connect planning with repository-aware development workflows.
 
-## Planned architecture
+## Architecture direction
 
 ```text
-Idea
-  ↓
-Requirement extraction
-  ↓
-Task / acceptance-criteria generation
-  ↓
-Human review
-  ↓
-Implementation workflow
-  ↓
-Tests + validation
+Idea → Requirement extraction → Task planning → Human review → Implementation → Tests
 ```
 
 ## Engineering principles
@@ -34,24 +24,20 @@ Tests + validation
 - Human approval before consequential changes.
 - Generated output is treated as untrusted input.
 - Secrets stay outside source control.
-- Tests should accompany executable functionality.
+- Tests accompany executable functionality.
 - Small, observable steps are preferred over unrestricted autonomous changes.
 
 ## Roadmap
 
-- [ ] Define a stable Python package structure
-- [ ] Add typed request/response models
-- [ ] Add deterministic planning tests
+- [ ] Define typed input/output contracts
+- [ ] Add a minimal end-to-end planning flow
+- [ ] Add deterministic tests
 - [ ] Add an LLM provider abstraction
 - [ ] Add prompt and output validation
 - [ ] Add repository context ingestion
-- [ ] Add a CLI for generating plans
+- [ ] Add a CLI
 - [ ] Add CI for tests and linting
 
 ## Contributing
 
-Keep changes focused, document behavior, and add tests for executable functionality. Do not commit API keys, access tokens, or private project data.
-
-## License
-
-License will be added when the project's first reusable implementation is published.
+Keep changes focused, explain the reasoning, and add reproducible validation for executable changes. Never commit API keys, access tokens, or private project data.
